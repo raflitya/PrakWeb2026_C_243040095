@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Showcase Portofolio Mini - Rafli Tya (243040095)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- React & Babel via CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #0a0f1e;
+      --bg-secondary: #0d1626;
+      --bg-card: #111827;
+      --bg-card-hover: #1a2437;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-orange: #f59e0b;
+      --accent-green: #10b981;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border: #1e2d42;
+      --border-hover: #3b82f6;
+      --radius: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 4px; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(10, 15, 30, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .navbar-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .navbar-links a:hover { color: var(--text-primary); }
+    .navbar-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: white;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: opacity .2s, transform .2s;
+    }
+    .navbar-cta:hover { opacity: .9; transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 60px;
+      position: relative;
+      text-align: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(139,92,246,0.12) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--accent-blue);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(0.85); }
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(34px, 5.5vw, 64px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: white;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 0 25px rgba(59,130,246,0.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(59,130,246,0.5);
+    }
+    .btn-github-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-primary);
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      transition: all .2s;
+    }
+    .btn-github-outline:hover {
+      border-color: var(--accent-blue);
+      background: rgba(59,130,246,0.1);
+    }
+
+    /* BADGE SKILLS SECTION */
+    .skills-section {
+      background: var(--bg-secondary);
+      padding: 60px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .skills-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      display: inline-block;
+      background: rgba(59,130,246,0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(59,130,246,0.25);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .skill-card-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 22px;
+      transition: transform .2s, border-color .2s;
+    }
+    .skill-card-badge:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-blue);
+    }
+    .skill-badge-icon {
+      font-size: 26px;
+    }
+    .skill-badge-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: left;
+    }
+
+    /* BADGE LEVEL DENGAN WARNA DINAMIS */
+    .badge-level {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+    .badge-mahir {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .badge-menengah {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .badge-pemula {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+
+    /* PROJECTS SECTION */
+    .projects-section {
+      padding: 80px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* PROJECT CARD */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59,130,246,0.4);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    .project-card:hover::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .card-number {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.12);
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid rgba(6, 182, 212, 0.25);
+    }
+    .card-dots {
+      display: flex;
+      gap: 5px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .dot-r { background: #ef4444; }
+    .dot-y { background: #f59e0b; }
+    .dot-g { background: #10b981; }
+
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #94a3b8;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .tag::before { content: '#'; opacity: .6; }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      padding: 11px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+      width: 100%;
+    }
+    .btn-github:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    .footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 14px 20px; }
+      .navbar-links { display: none; }
+      .hero { padding: 100px 20px 40px; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const GITHUB_REPO = "https://github.com/raflitya/PrakWeb2026_C_243040095";
+
+    /* Icon GitHub */
+    const GitHubIcon = () => (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+    );
+
+    /* Komponen BadgeSkill (Tugas 1: In-Lab Task) */
+    function BadgeSkill({ namaSkill, level, icon }) {
+      const getLevelClass = (lvl) => {
+        if (lvl === 'Mahir') return 'badge-mahir';
+        if (lvl === 'Menengah') return 'badge-menengah';
+        return 'badge-pemula';
+      };
+
+      return (
+        <div className="skill-card-badge">
+          <div className="skill-badge-icon">{icon}</div>
+          <div>
+            <div className="skill-badge-name">{namaSkill}</div>
+            <div className={`badge-level ${getLevelClass(level)}`}>
+              ● {level}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* Komponen Kartu Proyek (Tugas 3: Minimal 4 Kartu) */
+    function ProjectCard({ project, index }) {
+      return (
+        <div className="project-card">
+          <div>
+            <div className="card-top">
+              <span className="card-number">PROYEK #{index + 1}</span>
+              <div className="card-dots">
+                <span className="dot dot-r"></span>
+                <span className="dot dot-y"></span>
+                <span className="dot dot-g"></span>
+              </div>
+            </div>
+
+            {/* Judul Proyek */}
+            <h3 className="card-title">{project.title}</h3>
+
+            {/* Ringkasan Deskripsi */}
+            <p className="card-desc">{project.description}</p>
+
+            {/* Tagar Teknologi */}
+            <div className="card-tags">
+              {project.tags.map(tag => (
+                <span key={tag} className="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Tombol Tautan Repositori GitHub */}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
+            <GitHubIcon /> Repositori GitHub
+          </a>
+        </div>
+      );
+    }
+
+    /* Aplikasi Utama React */
+    function App() {
+      // 4 Kartu Proyek Showcase Portofolio Mini
+      const [projects, setProjects] = useState([
+        {
+          id: 1,
+          title: "Sistem Manajemen Data Mahasiswa (Java GUI)",
+          description: "Aplikasi desktop pengelolaan data akademik mahasiswa, mata kuliah, dan nilai menggunakan Java Swing, JDBC, dan basis data MySQL.",
+          tags: ["Java", "Swing", "MySQL", "JDBC", "OOP"],
+          github: GITHUB_REPO
+        },
+        {
+          id: 2,
+          title: "Web Portofolio & Landing Page Responsif",
+          description: "Website modern responsif yang dirancang dengan semantic HTML5 dan CSS Grid/Flexbox dengan dark mode serta animasi interaktif.",
+          tags: ["HTML", "CSS", "Flexbox", "Responsive Design"],
+          github: GITHUB_REPO
+        },
+        {
+          id: 3,
+          title: "Aplikasi Point of Sale (POS) Kasir Java",
+          description: "Aplikasi pengolah transaksi kasir berbasis Java Object-Oriented Programming yang menghitung struk, diskon, dan rekapitulasi penjualan.",
+          tags: ["Java", "OOP", "Data Structures", "Console GUI"],
+          github: GITHUB_REPO
+        },
+        {
+          id: 4,
+          title: "Showcase Portofolio Mini Web",
+          description: "Halaman web showcase portofolio interaktif berbasis HTML, CSS, React, dan Node.js Express yang terintegrasi dengan REST API dan GitHub.",
+          tags: ["HTML", "CSS", "React", "Node.js", "Express"],
+          github: GITHUB_REPO
+        }
+      ]);
+
+      // Fetch data dari server backend jika tersedia
+      useEffect(() => {
+        fetch('/api/projects')
+          .then(res => res.json())
+          .then(res => {
+            if (res.data && res.data.length > 0) {
+              setProjects(res.data.slice(0, 4)); // Pastikan tepat 4 kartu
+            }
+          })
+          .catch(() => {});
+      }, []);
+
+      // Daftar 3 Teknologi yang Dikuasai: HTML, CSS, Java
+      const skills = [
+        { namaSkill: "HTML", level: "Mahir", icon: "🌐" },
+        { namaSkill: "CSS", level: "Menengah", icon: "🎨" },
+        { namaSkill: "Java", level: "Menengah", icon: "☕" }
+      ];
+
+      return (
+        <>
+          {/* NAVBAR */}
+          <nav className="navbar">
+            <div className="navbar-logo">{'<RafliTya />'}</div>
+            <ul className="navbar-links">
+              <li><a href="#keahlian">Keahlian</a></li>
+              <li><a href="#proyek">Proyek ({projects.length})</a></li>
+              <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+            <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="navbar-cta">
+              <GitHubIcon /> Repositori
+            </a>
+          </nav>
+
+          {/* HERO */}
+          <section className="hero">
+            <div className="hero-bg"></div>
+            <div className="hero-content">
+              <div className="hero-badge">
+                <span className="hero-badge-dot"></span>
+                Praktikum Pemrograman Web 2026 • Kelas C
+              </div>
+              <h1 className="hero-title">
+                Halo, Saya <br/>
+                <span className="gradient-text">Rafli Tya Rahman</span>
+              </h1>
+              <p className="hero-desc">
+                NIM <strong>243040095</strong> • Mahasiswa Teknik Informatika yang berfokus pada pengembangan aplikasi web dan desktop menggunakan <strong>HTML</strong>, <strong>CSS</strong>, dan <strong>Java</strong>.
+              </p>
+              <div className="hero-actions">
+                <a href="#proyek" className="btn-primary">
+                  Lihat 4 Proyek Showcase ↓
+                </a>
+                <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="btn-github-outline">
+                  <GitHubIcon /> Buka GitHub Repository
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* KEAHLIAN YANG DIKUASAI: HTML, CSS, JAVA (BadgeSkill) */}
+          <section id="keahlian" className="skills-section">
+            <div className="skills-container">
+              <span className="section-tag">Keahlian</span>
+              <h2 className="section-title">Teknologi yang Dikuasai</h2>
+              <p className="section-subtitle">
+                Komponen BadgeSkill dengan warna dinamis sesuai level keahlian
+              </p>
+              <div className="skills-list">
+                {skills.map(s => (
+                  <BadgeSkill
+                    key={s.namaSkill}
+                    namaSkill={s.namaSkill}
+                    level={s.level}
+                    icon={s.icon}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* SHOWCASE PORTOFOLIO MINI (4 KARTU) */}
+          <section id="proyek" className="projects-section">
+            <div style={{ textAlign: 'center', marginBottom: 48 }}>
+              <span className="section-tag">Showcase Portofolio Mini</span>
+              <h2 className="section-title">Koleksi 4 Kartu Proyek</h2>
+              <p className="section-subtitle">
+                Daftar proyek pilihan dengan judul, deskripsi, tagar teknologi, dan tautan repositori GitHub
+              </p>
+            </div>
+
+            <div className="projects-grid">
+              {projects.map((proj, idx) => (
+                <ProjectCard key={proj.id || idx} project={proj} index={idx} />
+              ))}
+            </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="footer">
+            <p>
+              © 2026 <strong>Rafli Tya Rahman</strong> (243040095) • Praktikum Web Kelas C
+            </p>
+            <p style={{ marginTop: 8 }}>
+              Tautan GitHub: <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer">{GITHUB_REPO}</a>
+            </p>
+          </footer>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
