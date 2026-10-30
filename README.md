@@ -9,7 +9,7 @@
 
 ## 🌟 Fitur Utama Portofolio Raflitya
 
-1. **Keahlian yang Dikuasai (HTML, CSS, Java)** dengan komponen `BadgeSkill.jsx` dinamis.
+1. **Keahlian yang Dikuasai (HTML, CSS, Java, PHP, MySQL)** dengan komponen `BadgeSkill.jsx` dinamis.
 2. **Pemisahan Modul Komponen Mata Kuliah** dengan komponen `ItemMatkul.jsx`.
 3. **Showcase Portofolio Mini (4 Kartu Proyek)** dengan tautan repositori GitHub:
    - **Proyek 1**: [Tugas Besar Pemrograman Web 2025](https://github.com/raflitya/pw2025_tubes_243040095-)

@@ -809,11 +809,13 @@
           .catch(() => {});
       }, []);
 
-      // 3 Teknologi yang Dikuasai: HTML, CSS, Java
+      // 5 Teknologi yang Dikuasai: HTML, CSS, Java, PHP, MySQL
       const skills = [
         { namaSkill: "HTML", level: "Mahir", icon: "🌐" },
         { namaSkill: "CSS", level: "Menengah", icon: "🎨" },
-        { namaSkill: "Java", level: "Menengah", icon: "☕" }
+        { namaSkill: "Java", level: "Menengah", icon: "☕" },
+        { namaSkill: "PHP", level: "Menengah", icon: "🐘" },
+        { namaSkill: "MySQL", level: "Menengah", icon: "🐬" }
       ];
 
       return (
@@ -821,7 +823,7 @@
           {/* NAVBAR */}
           <nav className="navbar">
             <div className="navbar-logo" onClick={() => setActiveTab('portofolio')}>
-              {'<Raflitya />'}
+              Raflitya
             </div>
             <ul className="navbar-links">
               <li>
@@ -847,7 +849,7 @@
                 </button>
               </li>
             </ul>
-            <a href="https://github.com/raflitya/PrakWeb2026_C_243040095" target="_blank" rel="noopener noreferrer" className="navbar-cta">
+            <a href="https://github.com/raflitya" target="_blank" rel="noopener noreferrer" className="navbar-cta">
               <GitHubIcon /> GitHub
             </a>
           </nav>
@@ -873,7 +875,7 @@
                     <span className="gradient-text">Raflitya</span>
                   </h1>
                   <p className="hero-desc">
-                    Selamat datang di portofolio digital saya. Memuat keahlian dalam <strong>HTML</strong>, <strong>CSS</strong>, dan <strong>Java</strong>, showcase <strong>4 proyek utama</strong>, serta pengalaman magang di <strong>Dinas Lingkungan Hidup (Bidang Administrasi)</strong>.
+                    Selamat datang di portofolio digital saya. Memuat keahlian dalam <strong>HTML</strong>, <strong>CSS</strong>, <strong>Java</strong>, <strong>PHP</strong>, dan <strong>MySQL</strong>, showcase <strong>4 proyek utama</strong>, serta pengalaman magang di <strong>Dinas Lingkungan Hidup (Bidang Administrasi)</strong>.
                   </p>
                   <div className="hero-actions">
                     <a href="#proyek" className="btn-primary">
@@ -888,9 +890,6 @@
                     >
                       🌿 Pengalaman Magang
                     </button>
-                    <a href="https://github.com/raflitya/PrakWeb2026_C_243040095" target="_blank" rel="noopener noreferrer" className="btn-github-outline">
-                      <GitHubIcon /> Repositori Utama
-                    </a>
                   </div>
                 </div>
               </section>

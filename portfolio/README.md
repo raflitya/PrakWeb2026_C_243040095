@@ -6,10 +6,10 @@ Aplikasi web portofolio interaktif yang dibangun dengan **React** (frontend) dan
 
 ```
 PrakWeb2026_C_243040095/
-├── praktikum 1/
+├── praktikum-react-modul1/
 │   ├── BadgeSkill.jsx    ← Komponen BadgeSkill dinamis
 │   ├── ItemMatkul.jsx    ← Komponen ItemMatkul modular
-│   └── App.jsx           ← Komponen React utama
+│   └── app.jsx           ← Komponen React utama
 └── portfolio/
     ├── server.js         ← Backend Express API
     ├── package.json
@@ -21,7 +21,7 @@ PrakWeb2026_C_243040095/
 
 - **Nama Portofolio**: Raflitya
 - **Halaman Pengalaman Magang**: Dinas Lingkungan Hidup (Bidang Administrasi)
-- **Keahlian yang Dikuasai**: HTML, CSS, Java
+- **Keahlian yang Dikuasai**: HTML, CSS, Java, PHP, MySQL
 - **4 Kartu Proyek dengan Tautan GitHub**:
   1. `pw2025_tubes_243040095-`
   2. `itw2024_project1_243040095-`

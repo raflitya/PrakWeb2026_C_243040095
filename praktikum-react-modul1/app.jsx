@@ -11,14 +11,16 @@ export default function App() {
     nim: '243040095',
     kelas: 'C',
     programStudi: 'Teknik Informatika',
-    github: 'https://github.com/raflitya/PrakWeb2026_C_243040095'
+    github: 'https://github.com/raflitya'
   };
 
-  // Tugas 1: Daftar Keahlian yang dikuasai (HTML, CSS, Java)
+  // Tugas 1: Daftar Keahlian yang dikuasai (HTML, CSS, Java, PHP, MySQL)
   const daftarKeahlian = [
     { namaSkill: 'HTML', level: 'Mahir' },
     { namaSkill: 'CSS', level: 'Menengah' },
-    { namaSkill: 'Java', level: 'Menengah' }
+    { namaSkill: 'Java', level: 'Menengah' },
+    { namaSkill: 'PHP', level: 'Menengah' },
+    { namaSkill: 'MySQL', level: 'Menengah' }
   ];
 
   // Tugas 2: Pemisahan Modul Komponen Mata Kuliah
@@ -153,7 +155,7 @@ export default function App() {
               fontWeight: '600'
             }}
           >
-            <span>🐙 GitHub: raflitya/PrakWeb2026_C_243040095</span>
+            <span>🐙 GitHub: raflitya</span>
           </a>
         </div>
       </header>
