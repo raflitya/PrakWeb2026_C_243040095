@@ -9,49 +9,71 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const GITHUB_URL = "https://github.com/raflitya/PrakWeb2026_C_243040095";
-
-// API endpoint - Tepat 4 proyek showcase portofolio mini
+// 4 Kartu Proyek Portofolio Raflitya
 const projects = [
   {
     id: 1,
-    title: "Sistem Manajemen Data Mahasiswa (Java GUI)",
-    description: "Aplikasi desktop pengelolaan data akademik mahasiswa, mata kuliah, dan nilai menggunakan Java Swing, JDBC, dan basis data MySQL.",
-    tags: ["Java", "Swing", "MySQL", "JDBC", "OOP"],
-    github: GITHUB_URL,
-    demo: GITHUB_URL,
-    category: "Java"
+    title: "Tugas Besar Pemrograman Web 2025",
+    description: "Aplikasi web dinamis tugas besar yang mengintegrasikan frontend responsif dengan PHP dan basis data MySQL, mendukung operasi CRUD, autentikasi pengguna, dan manajemen data komprehensif.",
+    tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    github: "https://github.com/raflitya/pw2025_tubes_243040095-",
+    demo: "https://github.com/raflitya/pw2025_tubes_243040095-",
+    category: "Full Stack"
   },
   {
     id: 2,
-    title: "Web Portofolio & Landing Page Responsif",
-    description: "Website modern responsif yang dirancang dengan semantic HTML5 dan CSS Grid/Flexbox dengan dark mode serta animasi interaktif.",
-    tags: ["HTML", "CSS", "Flexbox", "Responsive Design"],
-    github: GITHUB_URL,
-    demo: GITHUB_URL,
-    category: "HTML & CSS"
+    title: "Proyek 1 Pengantar Teknologi Web 2024",
+    description: "Pengembangan website dasar interaktif menggunakan semantic HTML5 dan styling CSS modern, mengimplementasikan prinsip Responsive Web Design, Flexbox, dan layout terstruktur.",
+    tags: ["HTML", "CSS", "Web Design", "Responsive"],
+    github: "https://github.com/raflitya/itw2024_project1_243040095-",
+    demo: "https://github.com/raflitya/itw2024_project1_243040095-",
+    category: "Frontend"
   },
   {
     id: 3,
-    title: "Aplikasi Point of Sale (POS) Kasir Java",
-    description: "Aplikasi pengolah transaksi kasir berbasis Java Object-Oriented Programming yang menghitung struk, diskon, dan rekapitulasi data penjualan.",
-    tags: ["Java", "OOP", "Data Structures", "Console GUI"],
-    github: GITHUB_URL,
-    demo: GITHUB_URL,
-    category: "Java"
+    title: "Praktikum Basis Data 2025 Kelas C",
+    description: "Perancangan dan implementasi basis data relasional komprehensif mencakup ERD, skema relasi, normalisasi data, manipulasi SQL (DDL/DML), serta optimasi query basis data.",
+    tags: ["SQL", "MySQL", "Database Design", "ERD", "Query Optimization"],
+    github: "https://github.com/raflitya/PBD2025_C_243040095",
+    demo: "https://github.com/raflitya/PBD2025_C_243040095",
+    category: "Database"
   },
   {
     id: 4,
-    title: "Showcase Portofolio Mini Web",
-    description: "Halaman web showcase portofolio interaktif berbasis HTML, CSS, React, dan Node.js Express yang terintegrasi dengan REST API dan GitHub.",
-    tags: ["HTML", "CSS", "React", "Node.js", "Express"],
-    github: GITHUB_URL,
+    title: "Praktikum Pemrograman Web 2026 Kelas C",
+    description: "Showcase Portofolio Mini dan modul praktikum web berbasis React dan Node.js Express, dilengkapi komponen modular BadgeSkill dinamis, ItemMatkul, dan integrasi REST API.",
+    tags: ["React", "Node.js", "Express", "HTML", "CSS", "REST API"],
+    github: "https://github.com/raflitya/PrakWeb2026_C_243040095",
     demo: "http://localhost:3000",
     category: "Full Stack"
   }
 ];
 
-// Route API
+// Data Pengalaman Magang
+const internship = {
+  instansi: "Dinas Lingkungan Hidup",
+  bidang: "Administrasi",
+  posisi: "Staff Administrasi Magang (Internship)",
+  periode: "Magang / Praktik Kerja Lapangan",
+  lokasi: "Kantor Dinas Lingkungan Hidup",
+  deskripsi: "Bertanggung jawab dalam pengelolaan administrasi perkantoran, digitalisasi arsip, penataan surat masuk/keluar, serta pendataan program kegiatan lingkungan hidup.",
+  tanggungJawab: [
+    "Mengelola tata kelola persuratan dinas (surat masuk, surat keluar, disposisi, dan pengarsipan digital).",
+    "Melakukan entri data dan rekapitulasi laporan kegiatan operasional ke dalam spreadsheet dan sistem database.",
+    "Membantu pelayanan administrasi masyarakat dan verifikasi kelengkapan berkas pelayanan lingkungan.",
+    "Menyusun dokumentasi dan notulensi rapat koordinasi antar divisi di Dinas Lingkungan Hidup.",
+    "Mengoptimalkan efisiensi pencarian dokumen dinas melalui sistem penomoran dan folderisasi terstruktur."
+  ],
+  keahlianDiterapkan: [
+    "Administrasi Perkantoran",
+    "Manajemen Dokumen & Kearsipan",
+    "Microsoft Office & Google Workspace",
+    "Rekapitulasi & Verifikasi Data",
+    "Komunikasi Publik & Pelayanan Prima"
+  ]
+};
+
+// Route API Projects
 app.get('/api/projects', (req, res) => {
   res.json({
     success: true,
@@ -68,6 +90,14 @@ app.get('/api/projects/:id', (req, res) => {
   res.json({ success: true, data: project });
 });
 
+// Route API Pengalaman Magang
+app.get('/api/internship', (req, res) => {
+  res.json({
+    success: true,
+    data: internship
+  });
+});
+
 // Serve frontend untuk semua route lain
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -76,6 +106,6 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`\n🚀 Server berjalan di: http://localhost:${PORT}`);
   console.log(`📦 API Proyek: http://localhost:${PORT}/api/projects`);
-  console.log(`🐙 GitHub: ${GITHUB_URL}`);
+  console.log(`💼 API Magang: http://localhost:${PORT}/api/internship`);
   console.log(`\nTekan CTRL+C untuk menghentikan server\n`);
 });

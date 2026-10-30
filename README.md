@@ -1,45 +1,39 @@
-# Praktikum Pemrograman Web 2026
+# Portofolio Raflitya - Praktikum Pemrograman Web 2026
 
-**Nama**: Rafli Tya Rahman  
+**Nama**: Raflitya (Rafli Tya Rahman)  
 **NIM**: 243040095  
 **Kelas**: C  
 **Repositori**: [https://github.com/raflitya/PrakWeb2026_C_243040095](https://github.com/raflitya/PrakWeb2026_C_243040095)
 
 ---
 
-## 📋 Tugas Praktikum 1
+## 🌟 Fitur Utama Portofolio Raflitya
 
-### 1. Latihan Mandiri (In-Lab Task): `BadgeSkill.jsx`
-- Komponen menerima props `namaSkill` dan `level` (*Pemula*, *Menengah*, *Mahir*).
-- Menampilkan daftar keahlian di bawah profil dengan warna badge dinamis sesuai level.
-- Teknologi yang dikuasai: **HTML**, **CSS**, **Java**.
-
-### 2. Pemisahan Modul Komponen: `ItemMatkul.jsx`
-- Logika item mata kuliah dipisahkan ke dalam komponen mandiri bernama `ItemMatkul.jsx`.
-- Berkas `App.jsx` melakukan iterasi data dan memanggil `<ItemMatkul key={...} {...props} />`.
-
-### 3. Tugas Terstruktur (Laporan Mandiri): Showcase Portofolio Mini
-- Halaman Showcase Portofolio Mini memuat **4 kartu proyek**.
-- Setiap komponen proyek menampilkan:
-  1. **Judul Proyek**
-  2. **Ringkasan Deskripsi**
-  3. **Tagar Teknologi**
-  4. **Tombol Tautan Repositori GitHub** ([https://github.com/raflitya/PrakWeb2026_C_243040095](https://github.com/raflitya/PrakWeb2026_C_243040095))
+1. **Keahlian yang Dikuasai (HTML, CSS, Java)** dengan komponen `BadgeSkill.jsx` dinamis.
+2. **Pemisahan Modul Komponen Mata Kuliah** dengan komponen `ItemMatkul.jsx`.
+3. **Showcase Portofolio Mini (4 Kartu Proyek)** dengan tautan repositori GitHub:
+   - **Proyek 1**: [Tugas Besar Pemrograman Web 2025](https://github.com/raflitya/pw2025_tubes_243040095-)
+   - **Proyek 2**: [Proyek 1 Pengantar Teknologi Web 2024](https://github.com/raflitya/itw2024_project1_243040095-)
+   - **Proyek 3**: [Praktikum Basis Data 2025 Kelas C](https://github.com/raflitya/PBD2025_C_243040095)
+   - **Proyek 4**: [Praktikum Pemrograman Web 2026 Kelas C](https://github.com/raflitya/PrakWeb2026_C_243040095)
+4. **Halaman Pengalaman Magang**:
+   - **Instansi**: Dinas Lingkungan Hidup
+   - **Bidang**: Administrasi (Staff Administrasi Magang)
+   - Mencakup tanggung jawab administrasi perkantoran, pengarsipan surat masuk & keluar, digitalisasi dokumen lingkungan, serta rekapitulasi data operasional.
 
 ---
 
-## 🚀 Cara Menjalankan Web di Localhost
+## 🚀 Cara Menjalankan di Localhost
 
 ```bash
 # 1. Masuk ke direktori portfolio
 cd portfolio
 
-# 2. Install dependencies (jika belum)
-npm install
-
-# 3. Jalankan server
+# 2. Jalankan server Node.js Express
 npm start
+# atau
+node server.js
 ```
 
-Buka browser dan akses:
+Buka peramban (browser) dan akses:
 👉 **[http://localhost:3000](http://localhost:3000)**

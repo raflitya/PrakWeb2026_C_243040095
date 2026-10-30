@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Showcase Portofolio Mini - Rafli Tya (243040095)</title>
+  <title>Portofolio Raflitya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -56,32 +56,47 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 40px;
-      background: rgba(10, 15, 30, 0.88);
+      background: rgba(10, 15, 30, 0.90);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .navbar-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      cursor: pointer;
     }
     .navbar-links {
       display: flex;
-      gap: 28px;
+      gap: 16px;
       list-style: none;
+      align-items: center;
     }
-    .navbar-links a {
+    .nav-btn {
+      background: transparent;
+      border: 1px solid transparent;
       color: var(--text-secondary);
-      text-decoration: none;
       font-size: 14px;
-      font-weight: 500;
-      transition: color .2s;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
     }
-    .navbar-links a:hover { color: var(--text-primary); }
+    .nav-btn:hover {
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.04);
+    }
+    .nav-btn.active {
+      color: #ffffff;
+      background: rgba(59,130,246,0.15);
+      border-color: rgba(59,130,246,0.35);
+    }
     .navbar-cta {
       display: inline-flex;
       align-items: center;
@@ -99,7 +114,7 @@
 
     /* HERO */
     .hero {
-      min-height: 85vh;
+      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -114,7 +129,7 @@
         radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 80% 80%, rgba(139,92,246,0.12) 0%, transparent 60%);
     }
-    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+    .hero-content { position: relative; z-index: 1; max-width: 840px; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -140,7 +155,7 @@
     }
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(34px, 5.5vw, 64px);
+      font-size: clamp(36px, 6vw, 68px);
       font-weight: 700;
       line-height: 1.15;
       margin-bottom: 18px;
@@ -155,7 +170,7 @@
     .hero-desc {
       font-size: 17px;
       color: var(--text-secondary);
-      max-width: 620px;
+      max-width: 640px;
       margin: 0 auto 32px;
       line-height: 1.7;
     }
@@ -178,10 +193,31 @@
       font-size: 14px;
       box-shadow: 0 0 25px rgba(59,130,246,0.35);
       transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+      border: none;
     }
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 0 35px rgba(59,130,246,0.5);
+    }
+    .btn-secondary-page {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all .2s;
+      cursor: pointer;
+    }
+    .btn-secondary-page:hover {
+      background: rgba(16, 185, 129, 0.22);
+      transform: translateY(-2px);
     }
     .btn-github-outline {
       display: inline-flex;
@@ -236,7 +272,7 @@
     .section-subtitle {
       font-size: 15px;
       color: var(--text-secondary);
-      max-width: 500px;
+      max-width: 540px;
       margin: 0 auto 32px;
     }
     .skills-list {
@@ -419,10 +455,132 @@
       transform: translateY(-1px);
     }
 
+    /* PENGALAMAN MAGANG PAGE STYLES */
+    .internship-page {
+      padding: 120px 24px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+      min-height: 80vh;
+    }
+    .internship-hero-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .internship-hero-card::after {
+      content: '🌿';
+      position: absolute;
+      right: 20px;
+      bottom: -10px;
+      font-size: 120px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .internship-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .internship-instansi {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .internship-role {
+      font-size: 18px;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .internship-summary {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 760px;
+    }
+
+    .internship-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .internship-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .internship-card:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .internship-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .internship-duties-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .internship-duties-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .internship-duties-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #34d399;
+      font-weight: bold;
+    }
+
+    .internship-skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .internship-skill-pill {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
     /* FOOTER */
     .footer {
       border-top: 1px solid var(--border);
-      padding: 28px 24px;
+      padding: 30px 24px;
       text-align: center;
       background: var(--bg-secondary);
       color: var(--text-muted);
@@ -437,9 +595,11 @@
 
     @media (max-width: 768px) {
       .navbar { padding: 14px 20px; }
-      .navbar-links { display: none; }
+      .navbar-links { gap: 8px; }
+      .nav-btn { padding: 6px 10px; font-size: 12px; }
       .hero { padding: 100px 20px 40px; }
       .projects-grid { grid-template-columns: 1fr; }
+      .internship-hero-card { padding: 24px; }
     }
   </style>
 </head>
@@ -449,7 +609,7 @@
   <script type="text/babel">
     const { useState, useEffect } = React;
 
-    const GITHUB_REPO = "https://github.com/raflitya/PrakWeb2026_C_243040095";
+    const GITHUB_PROFILE = "https://github.com/raflitya";
 
     /* Icon GitHub */
     const GitHubIcon = () => (
@@ -514,59 +674,142 @@
             rel="noopener noreferrer"
             className="btn-github"
           >
-            <GitHubIcon /> Repositori GitHub
+            <GitHubIcon /> Tautan Repositori GitHub
           </a>
         </div>
       );
     }
 
-    /* Aplikasi Utama React */
+    /* Halaman Pengalaman Magang */
+    function InternshipPage({ onBackToPortfolio }) {
+      const internshipData = {
+        instansi: "Dinas Lingkungan Hidup",
+        bidang: "Administrasi",
+        posisi: "Staff Administrasi (Internship)",
+        periode: "Pengalaman Kerja Lapangan / Magang",
+        deskripsi: "Pernah melaksanakan magang di Dinas Lingkungan Hidup dengan penempatan pada bidang administrasi perkantoran. Berperan aktif dalam tata kelola dokumen persuratan, input rekapitulasi data lingkungan hidup, verifikasi berkas pelayanan, serta pengarsipan digital.",
+        tanggungJawab: [
+          "Pengelolaan dan pencatatan alur surat masuk dan surat keluar resmi dinas secara sistematis.",
+          "Digitalisasi arsip dokumen perizinan lingkungan, berkas persampahan, dan pelaporan instansi.",
+          "Rekapitulasi data kegiatan operasional lingkungan hidup ke dalam format spreadsheet terstruktur.",
+          "Membantu administrasi pelayanan publik dan koordinasi berkas dengan seksi/bidang terkait.",
+          "Pembuatan notulensi rapat dinas serta penyusunan draf berkas laporan kegiatan mingguan."
+        ],
+        keahlian: [
+          "Administrasi Perkantoran",
+          "Manajemen Arsip & Persuratan",
+          "Pengolahan Data (Excel / Spreadsheet)",
+          "Komunikasi & Koordinasi Antar Bidang",
+          "Ketelitian & Akurasi Data",
+          "Pelayanan Publik Prima"
+        ]
+      };
+
+      return (
+        <div className="internship-page">
+          <div className="internship-hero-card">
+            <span className="internship-tag">🌱 Pengalaman Magang</span>
+            <h1 className="internship-instansi">{internshipData.instansi}</h1>
+            <div className="internship-role">Bidang: {internshipData.bidang} • {internshipData.posisi}</div>
+            <p className="internship-summary">{internshipData.deskripsi}</p>
+          </div>
+
+          <div className="internship-grid">
+            <div className="internship-card">
+              <h3 className="internship-card-title">
+                📋 Tanggung Jawab & Tugas Pokok
+              </h3>
+              <ul className="internship-duties-list">
+                {internshipData.tanggungJawab.map((duty, idx) => (
+                  <li key={idx}>{duty}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="internship-card">
+              <h3 className="internship-card-title">
+                💼 Keahlian & Keterampilan yang Diterapkan
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginBottom: 16 }}>
+                Selama magang di bidang administrasi Dinas Lingkungan Hidup, keterampilan yang diasah dan dipraktikkan meliputi:
+              </p>
+              <div className="internship-skills-tags">
+                {internshipData.keahlian.map((skill, idx) => (
+                  <span key={idx} className="internship-skill-pill">
+                    ✓ {skill}
+                  </span>
+                ))}
+              </div>
+
+              <div style={{ marginTop: 24, padding: 16, background: 'rgba(255,255,255,0.03)', borderRadius: 10, border: '1px solid var(--border)' }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#38bdf8', marginBottom: 4 }}>
+                  💡 Pengalaman Berharga
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
+                  Memperoleh pemahaman mendalam mengenai etika birokrasi pemerintahan, kecepatan pelayanan administrasi publik, serta manajemen data lingkungan yang rapi dan terukur.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 20 }}>
+            <button onClick={onBackToPortfolio} className="btn-primary">
+              ← Kembali ke Showcase Proyek
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    /* Aplikasi Utama Portofolio Raflitya */
     function App() {
-      // 4 Kartu Proyek Showcase Portofolio Mini
+      const [activeTab, setActiveTab] = useState('portofolio'); // 'portofolio' atau 'magang'
+
+      // 4 Kartu Proyek Sesuai Permintaan Link GitHub
       const [projects, setProjects] = useState([
         {
           id: 1,
-          title: "Sistem Manajemen Data Mahasiswa (Java GUI)",
-          description: "Aplikasi desktop pengelolaan data akademik mahasiswa, mata kuliah, dan nilai menggunakan Java Swing, JDBC, dan basis data MySQL.",
-          tags: ["Java", "Swing", "MySQL", "JDBC", "OOP"],
-          github: GITHUB_REPO
+          title: "Tugas Besar Pemrograman Web 2025",
+          description: "Aplikasi web dinamis tugas besar yang mengintegrasikan frontend responsif dengan PHP dan basis data MySQL, mendukung operasi CRUD, autentikasi pengguna, dan manajemen data komprehensif.",
+          tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+          github: "https://github.com/raflitya/pw2025_tubes_243040095-"
         },
         {
           id: 2,
-          title: "Web Portofolio & Landing Page Responsif",
-          description: "Website modern responsif yang dirancang dengan semantic HTML5 dan CSS Grid/Flexbox dengan dark mode serta animasi interaktif.",
-          tags: ["HTML", "CSS", "Flexbox", "Responsive Design"],
-          github: GITHUB_REPO
+          title: "Proyek 1 Pengantar Teknologi Web 2024",
+          description: "Pengembangan website dasar interaktif menggunakan semantic HTML5 dan styling CSS modern, mengimplementasikan prinsip Responsive Web Design, Flexbox, dan layout terstruktur.",
+          tags: ["HTML", "CSS", "Web Design", "Responsive"],
+          github: "https://github.com/raflitya/itw2024_project1_243040095-"
         },
         {
           id: 3,
-          title: "Aplikasi Point of Sale (POS) Kasir Java",
-          description: "Aplikasi pengolah transaksi kasir berbasis Java Object-Oriented Programming yang menghitung struk, diskon, dan rekapitulasi penjualan.",
-          tags: ["Java", "OOP", "Data Structures", "Console GUI"],
-          github: GITHUB_REPO
+          title: "Praktikum Basis Data 2025 Kelas C",
+          description: "Perancangan dan implementasi basis data relasional komprehensif mencakup ERD, skema relasi, normalisasi data, manipulasi SQL (DDL/DML), serta optimasi query basis data.",
+          tags: ["SQL", "MySQL", "Database Design", "ERD", "Query Optimization"],
+          github: "https://github.com/raflitya/PBD2025_C_243040095"
         },
         {
           id: 4,
-          title: "Showcase Portofolio Mini Web",
-          description: "Halaman web showcase portofolio interaktif berbasis HTML, CSS, React, dan Node.js Express yang terintegrasi dengan REST API dan GitHub.",
-          tags: ["HTML", "CSS", "React", "Node.js", "Express"],
-          github: GITHUB_REPO
+          title: "Praktikum Pemrograman Web 2026 Kelas C",
+          description: "Showcase Portofolio Mini dan modul praktikum web berbasis React dan Node.js Express, dilengkapi komponen modular BadgeSkill dinamis, ItemMatkul, dan integrasi REST API.",
+          tags: ["React", "Node.js", "Express", "HTML", "CSS", "REST API"],
+          github: "https://github.com/raflitya/PrakWeb2026_C_243040095"
         }
       ]);
 
-      // Fetch data dari server backend jika tersedia
+      // Ambil data dari server Express jika ada
       useEffect(() => {
         fetch('/api/projects')
           .then(res => res.json())
           .then(res => {
             if (res.data && res.data.length > 0) {
-              setProjects(res.data.slice(0, 4)); // Pastikan tepat 4 kartu
+              setProjects(res.data.slice(0, 4));
             }
           })
           .catch(() => {});
       }, []);
 
-      // Daftar 3 Teknologi yang Dikuasai: HTML, CSS, Java
+      // 3 Teknologi yang Dikuasai: HTML, CSS, Java
       const skills = [
         { namaSkill: "HTML", level: "Mahir", icon: "🌐" },
         { namaSkill: "CSS", level: "Menengah", icon: "🎨" },
@@ -577,88 +820,128 @@
         <>
           {/* NAVBAR */}
           <nav className="navbar">
-            <div className="navbar-logo">{'<RafliTya />'}</div>
+            <div className="navbar-logo" onClick={() => setActiveTab('portofolio')}>
+              {'<Raflitya />'}
+            </div>
             <ul className="navbar-links">
-              <li><a href="#keahlian">Keahlian</a></li>
-              <li><a href="#proyek">Proyek ({projects.length})</a></li>
-              <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li>
+                <button
+                  className={`nav-btn ${activeTab === 'portofolio' ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab('portofolio');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  Portofolio & Proyek
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`nav-btn ${activeTab === 'magang' ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab('magang');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  🌿 Pengalaman Magang
+                </button>
+              </li>
             </ul>
-            <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="navbar-cta">
-              <GitHubIcon /> Repositori
+            <a href="https://github.com/raflitya/PrakWeb2026_C_243040095" target="_blank" rel="noopener noreferrer" className="navbar-cta">
+              <GitHubIcon /> GitHub
             </a>
           </nav>
 
-          {/* HERO */}
-          <section className="hero">
-            <div className="hero-bg"></div>
-            <div className="hero-content">
-              <div className="hero-badge">
-                <span className="hero-badge-dot"></span>
-                Praktikum Pemrograman Web 2026 • Kelas C
-              </div>
-              <h1 className="hero-title">
-                Halo, Saya <br/>
-                <span className="gradient-text">Rafli Tya Rahman</span>
-              </h1>
-              <p className="hero-desc">
-                NIM <strong>243040095</strong> • Mahasiswa Teknik Informatika yang berfokus pada pengembangan aplikasi web dan desktop menggunakan <strong>HTML</strong>, <strong>CSS</strong>, dan <strong>Java</strong>.
-              </p>
-              <div className="hero-actions">
-                <a href="#proyek" className="btn-primary">
-                  Lihat 4 Proyek Showcase ↓
-                </a>
-                <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="btn-github-outline">
-                  <GitHubIcon /> Buka GitHub Repository
-                </a>
-              </div>
-            </div>
-          </section>
+          {/* KONTEN BERDASARKAN HALAMAN AKTIF */}
+          {activeTab === 'magang' ? (
+            <InternshipPage onBackToPortfolio={() => {
+              setActiveTab('portofolio');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }} />
+          ) : (
+            <>
+              {/* HERO SECTION */}
+              <section className="hero">
+                <div className="hero-bg"></div>
+                <div className="hero-content">
+                  <div className="hero-badge">
+                    <span className="hero-badge-dot"></span>
+                    Portofolio Mahasiswa • Teknik Informatika
+                  </div>
+                  <h1 className="hero-title">
+                    Halo, Saya <br/>
+                    <span className="gradient-text">Raflitya</span>
+                  </h1>
+                  <p className="hero-desc">
+                    Selamat datang di portofolio digital saya. Memuat keahlian dalam <strong>HTML</strong>, <strong>CSS</strong>, dan <strong>Java</strong>, showcase <strong>4 proyek utama</strong>, serta pengalaman magang di <strong>Dinas Lingkungan Hidup (Bidang Administrasi)</strong>.
+                  </p>
+                  <div className="hero-actions">
+                    <a href="#proyek" className="btn-primary">
+                      Lihat 4 Kartu Proyek ↓
+                    </a>
+                    <button
+                      onClick={() => {
+                        setActiveTab('magang');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="btn-secondary-page"
+                    >
+                      🌿 Pengalaman Magang
+                    </button>
+                    <a href="https://github.com/raflitya/PrakWeb2026_C_243040095" target="_blank" rel="noopener noreferrer" className="btn-github-outline">
+                      <GitHubIcon /> Repositori Utama
+                    </a>
+                  </div>
+                </div>
+              </section>
 
-          {/* KEAHLIAN YANG DIKUASAI: HTML, CSS, JAVA (BadgeSkill) */}
-          <section id="keahlian" className="skills-section">
-            <div className="skills-container">
-              <span className="section-tag">Keahlian</span>
-              <h2 className="section-title">Teknologi yang Dikuasai</h2>
-              <p className="section-subtitle">
-                Komponen BadgeSkill dengan warna dinamis sesuai level keahlian
-              </p>
-              <div className="skills-list">
-                {skills.map(s => (
-                  <BadgeSkill
-                    key={s.namaSkill}
-                    namaSkill={s.namaSkill}
-                    level={s.level}
-                    icon={s.icon}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
+              {/* KEAHLIAN YANG DIKUASAI: HTML, CSS, JAVA (BadgeSkill) */}
+              <section id="keahlian" className="skills-section">
+                <div className="skills-container">
+                  <span className="section-tag">Keahlian</span>
+                  <h2 className="section-title">Teknologi yang Dikuasai</h2>
+                  <p className="section-subtitle">
+                    Komponen BadgeSkill dengan warna dinamis sesuai level keahlian
+                  </p>
+                  <div className="skills-list">
+                    {skills.map(s => (
+                      <BadgeSkill
+                        key={s.namaSkill}
+                        namaSkill={s.namaSkill}
+                        level={s.level}
+                        icon={s.icon}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </section>
 
-          {/* SHOWCASE PORTOFOLIO MINI (4 KARTU) */}
-          <section id="proyek" className="projects-section">
-            <div style={{ textAlign: 'center', marginBottom: 48 }}>
-              <span className="section-tag">Showcase Portofolio Mini</span>
-              <h2 className="section-title">Koleksi 4 Kartu Proyek</h2>
-              <p className="section-subtitle">
-                Daftar proyek pilihan dengan judul, deskripsi, tagar teknologi, dan tautan repositori GitHub
-              </p>
-            </div>
+              {/* SHOWCASE PORTOFOLIO MINI (4 KARTU PROYEK) */}
+              <section id="proyek" className="projects-section">
+                <div style={{ textAlign: 'center', marginBottom: 48 }}>
+                  <span className="section-tag">Showcase Portofolio Mini</span>
+                  <h2 className="section-title">Koleksi 4 Kartu Proyek</h2>
+                  <p className="section-subtitle">
+                    Komponen kartu proyek dengan judul, ringkasan deskripsi, tagar teknologi, dan tautan repositori GitHub
+                  </p>
+                </div>
 
-            <div className="projects-grid">
-              {projects.map((proj, idx) => (
-                <ProjectCard key={proj.id || idx} project={proj} index={idx} />
-              ))}
-            </div>
-          </section>
+                <div className="projects-grid">
+                  {projects.map((proj, idx) => (
+                    <ProjectCard key={proj.id || idx} project={proj} index={idx} />
+                  ))}
+                </div>
+              </section>
+            </>
+          )}
 
           {/* FOOTER */}
           <footer className="footer">
             <p>
-              © 2026 <strong>Rafli Tya Rahman</strong> (243040095) • Praktikum Web Kelas C
+              © 2026 <strong>Portofolio Raflitya</strong> • NIM 243040095 • Praktikum Web Kelas C
             </p>
             <p style={{ marginTop: 8 }}>
-              Tautan GitHub: <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer">{GITHUB_REPO}</a>
+              GitHub Profile: <a href={GITHUB_PROFILE} target="_blank" rel="noopener noreferrer">{GITHUB_PROFILE}</a>
             </p>
           </footer>
         </>
