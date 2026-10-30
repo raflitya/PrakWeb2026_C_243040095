@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BadgeSkill from './BadgeSkill';
 import ItemMatkul from './ItemMatkul';
+import KartuProfil from './KartuProfil';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('portofolio');
@@ -88,15 +89,10 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: 'Segoe UI, sans-serif', maxWidth: '1000px', margin: '0 auto', padding: '24px', color: '#1e293b' }}>
-      {/* Header Profil */}
-      <header style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '28px', marginBottom: '28px', textAlign: 'center' }}>
-        <h1 style={{ margin: '0 0 8px 0', fontSize: '28px', color: '#0f172a' }}>Portofolio {profil.nama}</h1>
-        <p style={{ margin: '0 0 16px 0', color: '#64748b', fontSize: '15px' }}>
-          NIM: <strong>{profil.nim}</strong> | Kelas: <strong>{profil.kelas}</strong> | {profil.programStudi}
-        </p>
-
+      {/* Komponen KartuProfil */}
+      <KartuProfil {...profil} daftarKeahlian={daftarKeahlian}>
         {/* Tab Navigasi */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '16px', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
           <button
             onClick={() => setActiveTab('portofolio')}
             style={{
@@ -126,39 +122,7 @@ export default function App() {
             🌿 Pengalaman Magang
           </button>
         </div>
-
-        {/* Tugas 1: Daftar Keahlian dengan BadgeSkill */}
-        <div style={{ marginTop: '16px' }}>
-          <h3 style={{ fontSize: '15px', color: '#475569', marginBottom: '10px' }}>Keahlian yang Dikuasai:</h3>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px' }}>
-            {daftarKeahlian.map((item) => (
-              <BadgeSkill key={item.namaSkill} namaSkill={item.namaSkill} level={item.level} />
-            ))}
-          </div>
-        </div>
-
-        <div style={{ marginTop: '18px' }}>
-          <a
-            href={profil.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              backgroundColor: '#0f172a',
-              color: '#ffffff',
-              padding: '8px 18px',
-              borderRadius: '8px',
-              textDecoration: 'none',
-              fontSize: '13px',
-              fontWeight: '600'
-            }}
-          >
-            <span>🐙 GitHub: raflitya</span>
-          </a>
-        </div>
-      </header>
+      </KartuProfil>
 
       {/* Konten Halaman Pengalaman Magang */}
       {activeTab === 'magang' ? (

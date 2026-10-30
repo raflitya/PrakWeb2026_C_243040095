@@ -7,6 +7,7 @@ Aplikasi web portofolio interaktif yang dibangun dengan **React** (frontend) dan
 ```
 PrakWeb2026_C_243040095/
 ├── praktikum-react-modul1/
+│   ├── KartuProfil.jsx   ← Komponen Kartu Profil mandiri
 │   ├── BadgeSkill.jsx    ← Komponen BadgeSkill dinamis
 │   ├── ItemMatkul.jsx    ← Komponen ItemMatkul modular
 │   └── app.jsx           ← Komponen React utama

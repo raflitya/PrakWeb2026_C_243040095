@@ -618,6 +618,62 @@
       </svg>
     );
 
+    /* Komponen KartuProfil (Modular Profile Card) */
+    function KartuProfil({ nama, nim, kelas, programStudi, github }) {
+      return (
+        <div style={{
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border)',
+          borderRadius: '20px',
+          padding: '28px 24px',
+          maxWidth: '620px',
+          margin: '0 auto 40px',
+          textAlign: 'center',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0,
+            height: '4px',
+            background: 'linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-green))'
+          }} />
+          <div style={{
+            width: '68px',
+            height: '68px',
+            borderRadius: '50%',
+            margin: '0 auto 14px',
+            background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
+            color: '#fff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '28px',
+            fontWeight: '700',
+            boxShadow: '0 0 20px rgba(59,130,246,0.35)'
+          }}>
+            {nama ? nama.charAt(0) : 'R'}
+          </div>
+          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '24px', fontWeight: '700', marginBottom: '6px' }}>
+            {nama}
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '14px', marginBottom: '16px' }}>
+            NIM: <strong style={{ color: 'var(--text-primary)' }}>{nim}</strong> • Kelas: <strong style={{ color: 'var(--text-primary)' }}>{kelas}</strong> • {programStudi}
+          </p>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+            style={{ width: 'auto', display: 'inline-flex', padding: '8px 20px', borderRadius: '8px' }}
+          >
+            <GitHubIcon /> {github.replace('https://', '')}
+          </a>
+        </div>
+      );
+    }
+
     /* Komponen BadgeSkill (Tugas 1: In-Lab Task) */
     function BadgeSkill({ namaSkill, level, icon }) {
       const getLevelClass = (lvl) => {
@@ -894,7 +950,18 @@
                 </div>
               </section>
 
-              {/* KEAHLIAN YANG DIKUASAI: HTML, CSS, JAVA (BadgeSkill) */}
+              {/* KARTU PROFIL MAHASISWA (KartuProfil.jsx) */}
+              <section style={{ padding: '0 24px', margin: '-30px auto 20px', position: 'relative', zIndex: 10 }}>
+                <KartuProfil
+                  nama="Raflitya"
+                  nim="243040095"
+                  kelas="C"
+                  programStudi="Teknik Informatika"
+                  github="https://github.com/raflitya"
+                />
+              </section>
+
+              {/* KEAHLIAN YANG DIKUASAI: HTML, CSS, JAVA, PHP, MYSQL (BadgeSkill) */}
               <section id="keahlian" className="skills-section">
                 <div className="skills-container">
                   <span className="section-tag">Keahlian</span>
