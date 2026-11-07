@@ -1,18 +1,7 @@
 import React from 'react';
 import BadgeSkill from './BadgeSkill';
 
-/**
- * Komponen KartuProfil
- * Menampilkan kartu profil mahasiswa secara modular dan terstruktur.
- * Menerima props:
- * - nama: Nama lengkap / nama mahasiswa
- * - nim: Nomor Induk Mahasiswa
- * - kelas: Kelas perkuliahan (misal: 'C')
- * - programStudi: Program Studi (misal: 'Teknik Informatika')
- * - github: URL repositori / profil GitHub
- * - daftarKeahlian: Array objek [{ namaSkill, level }] (opsional)
- * - children: Elemen tambahan di dalam kartu (opsional)
- */
+
 export default function KartuProfil({
   nama = 'Raflitya',
   nim = '243040095',
